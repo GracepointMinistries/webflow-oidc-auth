@@ -1,0 +1,30 @@
+name: main
+on:
+  push:
+    branches:
+      - master
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '12'
+      - name: Use node_modules cache
+        uses: actions/cache@v2
+        with:
+          path: webflow-oidc-auth/node_modules
+          key: node_modules-${{hashFiles('webflow-oidc-auth/package-lock.json')}}
+      - name: Install dependencies
+        working-directory: webflow-oidc-auth
+        run: npm install
+      - name: Build
+        working-directory: webflow-oidc-auth
+        run: npm run build
+      - name: GitHub Tag and Release
+        uses: kevinhwang/action-github-tag-release@v1
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          path: webflow-oidc-auth/.serverless/webflow-oidc-auth.zip

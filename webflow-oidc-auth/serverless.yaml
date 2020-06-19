@@ -1,0 +1,20 @@
+service: webflow-oidc-auth
+plugins:
+  - serverless-webpack
+provider:
+  name: aws
+  runtime: nodejs12.x
+
+functions:
+  webflow-oidc-auth:
+    handler: src/index.handler
+    events:
+      - http:
+        method: post
+        path: auth
+        integration: lambda
+custom:
+  webpack:
+    webpackConfig: webpack.config.js
+    packager: npm
+    includeModules: true
