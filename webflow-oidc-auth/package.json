@@ -1,0 +1,36 @@
+{
+  "name": "webflow_oidc_auth",
+  "version": "0.1.0",
+  "author": {
+    "email": "kevin.hwang@gpmail.org",
+    "name": "Kevin Hwang",
+    "url": "https://github.com/kevinhwang"
+  },
+  "homepage": "https://github.com/GracepointMinistries/webflow-oidc-auth",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GracepointMinistries/webflow-oidc-auth"
+  },
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.13",
+    "@types/node-fetch": "^2.5.7",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.0.5",
+    "serverless": "^1.73.1",
+    "serverless-webpack": "^5.3.2",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.5",
+    "webpack": "^4.43.0",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "scripts": {
+    "build": "npx serverless webpack",
+    "clean": "rm -rf .serverless .webpack build dist"
+  }
+}
