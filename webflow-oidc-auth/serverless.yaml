@@ -10,9 +10,9 @@ functions:
     handler: src/index.handler
     events:
       - http:
-        method: post
-        path: auth
-        integration: lambda
+          method: post
+          path: auth
+          integration: lambda
 custom:
   webpack:
     webpackConfig: webpack.config.js

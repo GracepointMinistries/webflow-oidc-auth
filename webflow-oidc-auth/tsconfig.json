@@ -9,10 +9,14 @@
     "downlevelIteration": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
+    "inlineSources": true,
+    "inlineSourceMap": true,
     "isolatedModules": true,
     "module": "CommonJS",
     "moduleResolution": "node",
+    "preserveConstEnums": true,
     "resolveJsonModule": true,
+    "sourceRoot": "./src",
     "strict": true
   }
 }
